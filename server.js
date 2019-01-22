@@ -8,21 +8,11 @@ const User = require('./models/user')
 const Exercise = require('./models/exercise')
 
 mongoose.connect(
-    process.env.MLAB_URI ||
-        'mongodb://exercisetracker:MLABexercisetracker7@ds163254.mlab.com:63254/fcc-exercisetracker',
+    process.env.MLAB_URI,
     { useNewUrlParser: true }
 )
 
 const db = mongoose.connection
-
-// const knex = require('knex')
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//         connectionString: process.env.DATABASE_URL,
-//         ssl: true,
-//     },
-// })
 
 app.use(cors())
 
